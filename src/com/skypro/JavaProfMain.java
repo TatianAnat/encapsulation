@@ -1,6 +1,7 @@
 package com.skypro;
 
 import com.skypro.account.v2.Account;
+import com.skypro.account.v4.TransverUtil;
 
 public class JavaProfMain {
 
@@ -9,6 +10,7 @@ public class JavaProfMain {
         transferMoneyV1();
         transferMoneyV2();
         transferMoneyV3();
+        transferMoneyV4();
     }
 
     public  static void  transferMoneyV1() {
@@ -68,6 +70,20 @@ public class JavaProfMain {
         ivan.setBalance(ivan.getBalance() - amount);
         petr.setBalance(petr.getBalance() + amount);
 
+        System.out.println(ivan);
+        System.out.println(petr);
+    }
+
+    public static void transferMoneyV4() {
+        System.out.println("JavaProfMain.transferMoneyV4");
+        com.skypro.account.v4.Account ivan = new com.skypro.account.v4.Account("Ivan",100);
+        com.skypro.account.v4.Account petr = new com.skypro.account.v4.Account("Petr",20);
+        int amount = 20;
+
+        System.out.println(ivan);
+        System.out.println(petr);
+
+        TransverUtil.transferMoney(ivan, petr, amount);
         System.out.println(ivan);
         System.out.println(petr);
     }
