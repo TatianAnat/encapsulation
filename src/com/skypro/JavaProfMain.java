@@ -8,6 +8,7 @@ public class JavaProfMain {
         System.out.println("Skypro Uni - Java Profession start!");
         transferMoneyV1();
         transferMoneyV2();
+        transferMoneyV3();
     }
 
     public  static void  transferMoneyV1() {
@@ -53,5 +54,21 @@ public class JavaProfMain {
 
         System.out.println(ivan.name + " имеет " + ivan.balance);
         System.out.println(petr.name + " имеет " + petr.balance);
+    }
+
+    public static void transferMoneyV3() {
+        com.skypro.account.v3.Account ivan = new com.skypro.account.v3.Account("Ivan",100);
+        com.skypro.account.v3.Account petr = new com.skypro.account.v3.Account("Petr",20);
+        int amount = 20;
+
+        System.out.println(ivan);
+        System.out.println(petr);
+
+        System.out.println(ivan + " передает " + petr + " " + amount);
+        ivan.setBalance(ivan.getBalance() - amount);
+        petr.setBalance(petr.getBalance() + amount);
+
+        System.out.println(ivan);
+        System.out.println(petr);
     }
 }
