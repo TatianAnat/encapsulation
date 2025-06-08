@@ -5,6 +5,12 @@ public class Account {
     private int balance;
 
     public Account(String name, int balance) {
+        if (name == null || name.isBlank()){
+            throw new IllegalArgumentException("имя пусто!");
+        }
+        if (balance < 0) {
+            throw new IllegalArgumentException("баланс отрицательный!");
+        }
         this.name = name;
         this.balance = balance;
     }
@@ -14,6 +20,9 @@ public class Account {
     }
 
     public void setBalance(int balance) {
+        if (balance < 0) {
+            throw new IllegalArgumentException("баланс отрицательный!");
+        }
         this.balance = balance;
     }
 
